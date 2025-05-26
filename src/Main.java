@@ -1,33 +1,99 @@
 public class Main {
     public static void main(String[] args) {
         // task 1
-        var dog = 8.0; var cat = 3.6; var paper = 763789;
-        System.out.println(dog); System.out.println(cat); System.out.println(paper);
+        byte age = 19;
+        if (age >= 18) {
+            System.out.println("Совершенолетний");
+        }
+        else {
+            System.out.println("Несовершенолетний");
+        }
+
         // task 2
-        dog += 4; cat += 4; paper += 4;
+        byte temperature = 2;
+        if (temperature >= 5) {
+            System.out.println("Сегодня тепло, можно идти без шапки");
+        }
+        else {
+            System.out.println("На улице холодно, нужно надеть шапку");
+        }
+
         // task 3
-        dog -= 3.5; cat += 1.6; paper += 7639;
+        short speed = 55;
+        if (speed > 60) {
+            System.out.println("Скорость превышена");
+        }
+        else {
+            System.out.println("Скорость не превышена");
+        }
+
         // task 4
-        var friend = 19; System.out.println(friend);
-        friend += 2; System.out.println(friend);
-        friend /= 7; System.out.println(friend);
+        if (age >= 2 && age < 7) {
+            System.out.println("Пора в детский сад");
+        }
+        else if (age >= 7 && age < 18) {
+            System.out.println("Пора в школу");
+        }
+        else if (age >= 18 && age <= 24) {
+            System.out.println("Пора в универ");
+        }
+        else if (age >= 24) {
+            System.out.println("Пора на работу");
+        }
+
         // task 5
-        var frog = 3.5; System.out.println(frog);
-        frog *= 10; System.out.println(frog);
-        frog /= 3.5; System.out.println(frog);
-        frog += 4; System.out.println(frog);
+        if (age < 5) {
+            System.out.println("Нельзя кататься на аттракционе");
+        }
+        else if (age >= 5 && age < 14) {
+            System.out.println("Можно кататься на аттракционе, но только со взрослым");
+        }
+        else if (age >= 14) {
+            System.out.println("Можно кататься на аттракционе, даже без взрослого");
+        }
+
         // task 6
-        var firstMan = 78.2; var secondMan = 82.7;
-        var result = firstMan + secondMan; System.out.println(result);
+        byte capacity = 102;
+        byte sitPlaces = 60;
+        byte standPlaces = (byte) (capacity - sitPlaces);
+
+        byte sitPlacesBusy = 34;
+        byte standPlacesBusy = 57;
+        if (sitPlacesBusy < sitPlaces) {
+            System.out.println("Есть сидячее место, чувак");
+        }
+        else if (standPlacesBusy < standPlaces) {
+            System.out.println("Есть стоячее место, чувак");
+        }
+        else {
+            System.out.println("Все занято, чувак");
+        }
+
         // task 7
-        var task7 = secondMan % firstMan;
-        // task 8.1
-        var time = 640; var timePerWorker = 8;
-        var amountWorkers = time / timePerWorker;
-        System.out.println("Всего работников в компании — " + amountWorkers + " человек");
-        // task 8.2
-        var newWorkers = amountWorkers + 94;
-        var newTime = newWorkers * timePerWorker;
-        System.out.println("Если в компании работает " + newWorkers + " человек, то всего " + newTime + " часов работы может быть поделено между сотрудниками");
+        int one = 14;
+        int two = 15;
+        int three = 15;
+
+        if (one > two && one > three) {
+            System.out.println("one - большее число: " + one);
+        }
+        else if (two > one && two > three) {
+            System.out.println("two - большее число: " + two);
+        }
+        else if (three > one && three > two) {
+            System.out.println("three - большее число: " + three);
+        }
+        else if (one < two && one < three) {
+            System.out.println("two и three - большие числа: " + two);
+        }
+        else if (two < one && two < three) {
+            System.out.println("one и three - большие числа: " + one);
+        }
+        else if (three < one && three < two) {
+            System.out.println("one и two - большие числа: " + one);
+        }
+        else {
+            System.out.println("Все числа равны, это число: " + one);
+        }
     }
 }
