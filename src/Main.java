@@ -7,7 +7,7 @@ public class Main {
         for (int i = 10; i > 0; i--) System.out.println(i);
 
         // task 3
-        for (int i = 0; i < 17; i += 2) System.out.println(i);
+        for (int i = 0; i <= 17; i += 2) System.out.println(i);
 
         // task 4
         for (int i = 10; i >= -10; i--) System.out.println(i);
@@ -23,10 +23,13 @@ public class Main {
 
         // task 8, 9
         int totalSum = 0;
+        int totalSumWithPercent = 0;
         int salary = 29000;
         for (int i = 0; i <= 12; i++) {
             System.out.printf("Месяц %s, сумма накоплений равна %s рублей\n", i, totalSum);
-            totalSum += salary + totalSum / 100;
+            System.out.printf("Месяц %s, сумма накоплений c процентами равна %s рублей\n", i, totalSumWithPercent);
+            totalSum += salary;
+            totalSumWithPercent += salary + totalSum / 100;
         }
 
         // task 10
