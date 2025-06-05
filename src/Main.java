@@ -1,35 +1,70 @@
 public class Main {
     public static void main(String[] args) {
-        // task 1
-        for (int i = 1; i <= 10; i++) System.out.println(i);
-
-        // task 2
-        for (int i = 10; i > 0; i--) System.out.println(i);
-
-        // task 3
-        for (int i = 0; i < 17; i += 2) System.out.println(i);
-
-        // task 4
-        for (int i = 10; i >= -10; i--) System.out.println(i);
-
-        // task 5
-        for (int i = 1904; i <= 2096; i += 4) System.out.println(i);
-
-        // task 6
-        for (int i = 7; i <= 98; i += 7) System.out.println(i);
-
-        // task 7
-        for (int i = 1; i <= 512; i *= 2) System.out.println(i);
-
-        // task 8, 9
-        int totalSum = 0;
-        int salary = 29000;
-        for (int i = 0; i <= 12; i++) {
-            System.out.printf("Месяц %s, сумма накоплений равна %s рублей\n", i, totalSum);
-            totalSum += salary + totalSum / 100;
+        // task 1, 2
+        byte clientOS = 0;
+        short clientDeviceYear = 2015;
+        String outMessage = "Установите%s версию приложения для %s по ссылке\n";
+        if (clientOS == 0 && clientDeviceYear < 2015) {
+            System.out.printf(outMessage, " облегчённую", "iOS");
+        }
+        else if (clientOS == 0 && clientDeviceYear >= 2015) {
+            System.out.printf(outMessage, "", "iOS");
+        }
+        else if (clientOS == 1 && clientDeviceYear < 2015) {
+            System.out.printf(outMessage, " облегчённую", "Android");
+        }
+        else if (clientOS == 1 && clientDeviceYear >= 2015) {
+            System.out.printf(outMessage, "", "Android");
         }
 
-        // task 10
-        for (int i = 1; i <= 10; i++) System.out.printf("2*%s=%s\n", i, 2 * i);
+        // task 3
+        short year = 2025;
+        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+            System.out.println(year + " год является високосным");
+        }
+        else System.out.println(year + " год не является високосным");
+
+        // task 4
+        short deliveryDistance = 95;
+        short days = 1;
+        if (deliveryDistance >= 0 && deliveryDistance < 20) {
+            System.out.println("Потребуется дней: " + days);
+        }
+        else if (deliveryDistance < 60) {
+            days += 1;
+            System.out.println("Потребуется дней: " + days);
+        }
+        else if (deliveryDistance < 100) {
+            days += 1;
+            System.out.println("Потребуется дней: " + days);
+        }
+        else System.out.println("Доставки нет");
+
+        // task 5
+        byte monthNumber = 1;
+        switch (monthNumber) {
+            case 12:
+            case 1:
+            case 2:
+                System.out.println("Зима");
+                break;
+            case 3:
+            case 4:
+            case 5:
+                System.out.println("Весна");
+                break;
+            case 6:
+            case 7:
+            case 8:
+                System.out.println("Лето");
+                break;
+            case 9:
+            case 10:
+            case 11:
+                System.out.println("Осень");
+                break;
+            default:
+                System.out.println("Ошибка");
+        }
     }
 }
