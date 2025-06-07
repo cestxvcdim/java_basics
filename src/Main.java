@@ -71,7 +71,7 @@ public class Main {
         int period = 79;
         start = 2025 - 200;
         int end = 2025 + 200;
-        for (int year = 0; year <= end; year++) {
+        for (int year = 0; year <= end; year += period) {
             if (year >= start) System.out.println(year);
         }
     }
