@@ -3,7 +3,7 @@ public class Main {
         // task 1
         String firstName = "Ivanov";
         String middleName = "Ivanovich";
-        String lastName = "Ivanov";
+        String lastName = "Ivan";
         String fullName = firstName + " " + lastName + " " + middleName;
         System.out.printf("Ф.И.О. сотрудника — %s\n", fullName);
 
