@@ -1,38 +1,78 @@
 public class Main {
     public static void main(String[] args) {
         // task 1
-        for (int i = 1; i <= 10; i++) System.out.println(i);
-
-        // task 2
-        for (int i = 10; i > 0; i--) System.out.println(i);
-
-        // task 3
-        for (int i = 0; i <= 17; i += 2) System.out.println(i);
-
-        // task 4
-        for (int i = 10; i >= -10; i--) System.out.println(i);
-
-        // task 5
-        for (int i = 1904; i <= 2096; i += 4) System.out.println(i);
-
-        // task 6
-        for (int i = 7; i <= 98; i += 7) System.out.println(i);
-
-        // task 7
-        for (int i = 1; i <= 512; i *= 2) System.out.println(i);
-
-        // task 8, 9
-        int totalSum = 0;
-        int totalSumWithPercent = 0;
-        int salary = 29000;
-        for (int i = 0; i <= 12; i++) {
-            System.out.printf("Месяц %s, сумма накоплений равна %s рублей\n", i, totalSum);
-            System.out.printf("Месяц %s, сумма накоплений c процентами равна %s рублей\n", i, totalSumWithPercent);
-            totalSum += salary;
-            totalSumWithPercent += salary + totalSum / 100;
+        int monthsAmount = 0;
+        int total = 2459000;
+        int start = 0;
+        while (start < total) {
+            System.out.printf("Месяц %s, сумма накоплений равна %s рублей\n", monthsAmount, start);
+            monthsAmount++;
+            start += 15000;
         }
 
-        // task 10
-        for (int i = 1; i <= 10; i++) System.out.printf("2*%s=%s\n", i, 2 * i);
+        // task 2
+        int i = 1;
+        while (i <= 10) {
+            System.out.printf("%s ", i);
+            i++;
+        }
+        System.out.println();
+
+        for (i = 10; i > 0; i--) {
+            System.out.printf("%s ", i);
+        }
+        System.out.println();
+
+        // task 3
+        int population = 12000000;
+        int bornPerYear = population / 1000 * (17 - 8);
+        for (i = 0; i <= 10; i++) {
+            System.out.printf("Год %s, численность населения составляет %s\n", i, population);
+            population += bornPerYear;
+        }
+
+        // task 4
+        total = 15000;
+        i = 0;
+        while (total < 12000000) {
+            System.out.printf("Месяц %s, сумма накоплений равна %s рублей\n", i, total);
+            i++;
+            total += total / 100 * 7;
+        }
+
+        // task 5
+        total = 15000;
+        i = 0;
+        while (total < 12000000) {
+            if (i > 0 && i % 6 == 0) {
+                System.out.printf("Месяц %s, сумма накоплений равна %s рублей\n", i, total);
+            }
+            i++;
+            total += total / 100 * 7;
+        }
+
+        // task 6
+        total = 15000;
+        monthsAmount = 9 * 12;
+        for (i = 1; i <= monthsAmount; i++) {
+            if (i > 0 && i % 6 == 0) {
+                System.out.printf("Месяц %s, сумма накоплений равна %s рублей\n", i, total);
+            }
+            total += total / 100 * 7;
+        }
+
+        // task 7
+        int firstFriday = 3;
+        for (int date = firstFriday; date <= 31; date += 7) {
+            System.out.printf("Сегодня пятница, %s-е число. Необходимо подготовить отчет\n", date);
+        }
+
+        // task 8
+        int period = 79;
+        start = 2025 - 200;
+        int end = 2025 + 200;
+        for (int year = 0; year <= end; year += period) {
+            if (year >= start) System.out.println(year);
+        }
     }
 }
