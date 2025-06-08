@@ -1,78 +1,64 @@
 public class Main {
     public static void main(String[] args) {
         // task 1
-        int monthsAmount = 0;
-        int total = 2459000;
-        int start = 0;
-        while (start < total) {
-            System.out.printf("Месяц %s, сумма накоплений равна %s рублей\n", monthsAmount, start);
-            monthsAmount++;
-            start += 15000;
-        }
+        int [] arr1 = new int[] {1, 2, 3};
+        double [] arr2 = {1.57, 7.654, 9.986};
+        char [] myArr = {'a', 'b', 'c'};
 
         // task 2
-        int i = 1;
-        while (i <= 10) {
-            System.out.printf("%s ", i);
-            i++;
+        for (int i = 0; i < arr1.length; i++) {
+            if (i == arr1.length - 1) {
+                System.out.print(arr1[i]);
+            }
+            else System.out.printf("%s, ", arr1[i]);
         }
         System.out.println();
 
-        for (i = 10; i > 0; i--) {
-            System.out.printf("%s ", i);
+        for (int i = 0; i < arr2.length; i++) {
+            if (i == arr2.length - 1) {
+                System.out.print(arr2[i]);
+            }
+            else System.out.printf("%s, ", arr2[i]);
+        }
+        System.out.println();
+
+        for (int i = 0; i < myArr.length; i++) {
+            if (i == myArr.length - 1) {
+                System.out.print(myArr[i]);
+            }
+            else System.out.printf("%s, ", myArr[i]);
         }
         System.out.println();
 
         // task 3
-        int population = 12000000;
-        int bornPerYear = population / 1000 * (17 - 8);
-        for (i = 0; i <= 10; i++) {
-            System.out.printf("Год %s, численность населения составляет %s\n", i, population);
-            population += bornPerYear;
+        for (int i = arr1.length - 1; i >= 0; i--) {
+            if (i == 0) {
+                System.out.print(arr1[i]);
+            }
+            else System.out.printf("%s, ", arr1[i]);
         }
+        System.out.println();
+
+        for (int i = arr2.length - 1; i >= 0; i--) {
+            if (i == 0) {
+                System.out.print(arr2[i]);
+            }
+            else System.out.printf("%s, ", arr2[i]);
+        }
+        System.out.println();
+
+        for (int i = myArr.length - 1; i >= 0; i--) {
+            if (i == 0) {
+                System.out.print(myArr[i]);
+            }
+            else System.out.printf("%s, ", myArr[i]);
+        }
+        System.out.println();
 
         // task 4
-        total = 15000;
-        i = 0;
-        while (total < 12000000) {
-            System.out.printf("Месяц %s, сумма накоплений равна %s рублей\n", i, total);
-            i++;
-            total += total / 100 * 7;
-        }
-
-        // task 5
-        total = 15000;
-        i = 0;
-        while (total < 12000000) {
-            if (i > 0 && i % 6 == 0) {
-                System.out.printf("Месяц %s, сумма накоплений равна %s рублей\n", i, total);
-            }
-            i++;
-            total += total / 100 * 7;
-        }
-
-        // task 6
-        total = 15000;
-        monthsAmount = 9 * 12;
-        for (i = 1; i <= monthsAmount; i++) {
-            if (i > 0 && i % 6 == 0) {
-                System.out.printf("Месяц %s, сумма накоплений равна %s рублей\n", i, total);
-            }
-            total += total / 100 * 7;
-        }
-
-        // task 7
-        int firstFriday = 3;
-        for (int date = firstFriday; date <= 31; date += 7) {
-            System.out.printf("Сегодня пятница, %s-е число. Необходимо подготовить отчет\n", date);
-        }
-
-        // task 8
-        int period = 79;
-        start = 2025 - 200;
-        int end = 2025 + 200;
-        for (int year = 0; year <= end; year += period) {
-            if (year >= start) System.out.println(year);
+        for (int i = 0; i < arr1.length; i++) {
+            if (arr1[i] % 2 != 0) arr1[i]++;
+            System.out.printf("%s ", arr1[i]);
         }
     }
 }
