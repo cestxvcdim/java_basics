@@ -1,64 +1,33 @@
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         // task 1
-        int [] arr1 = new int[] {1, 2, 3};
-        double [] arr2 = {1.57, 7.654, 9.986};
-        char [] myArr = {'a', 'b', 'c'};
+        int [] arr1 = {10000, 12000, 5000, 30000, 27500};
+        int sum = Arrays.stream(arr1).sum();
+        System.out.printf("Сумма трат за месяц составила %s рублей\n", sum);
 
         // task 2
-        for (int i = 0; i < arr1.length; i++) {
-            if (i == arr1.length - 1) {
-                System.out.print(arr1[i]);
-            }
-            else System.out.printf("%s, ", arr1[i]);
-        }
-        System.out.println();
-
-        for (int i = 0; i < arr2.length; i++) {
-            if (i == arr2.length - 1) {
-                System.out.print(arr2[i]);
-            }
-            else System.out.printf("%s, ", arr2[i]);
-        }
-        System.out.println();
-
-        for (int i = 0; i < myArr.length; i++) {
-            if (i == myArr.length - 1) {
-                System.out.print(myArr[i]);
-            }
-            else System.out.printf("%s, ", myArr[i]);
-        }
-        System.out.println();
+        int [] arr2 = {2000, 3500, 1400, 6900, 4760};
+        int minSpend = Arrays.stream(arr2).min().getAsInt();
+        int maxSpend = Arrays.stream(arr2).max().getAsInt();
+        System.out.printf("Минимальная сумма трат за неделю составила %s рублей.\n", minSpend);
+        System.out.printf("Максимальная сумма трат за неделю составила %s рублей.\n", maxSpend);
 
         // task 3
-        for (int i = arr1.length - 1; i >= 0; i--) {
-            if (i == 0) {
-                System.out.print(arr1[i]);
-            }
-            else System.out.printf("%s, ", arr1[i]);
-        }
-        System.out.println();
-
-        for (int i = arr2.length - 1; i >= 0; i--) {
-            if (i == 0) {
-                System.out.print(arr2[i]);
-            }
-            else System.out.printf("%s, ", arr2[i]);
-        }
-        System.out.println();
-
-        for (int i = myArr.length - 1; i >= 0; i--) {
-            if (i == 0) {
-                System.out.print(myArr[i]);
-            }
-            else System.out.printf("%s, ", myArr[i]);
-        }
-        System.out.println();
+        double [] arr3 = {23000, 16700, 7750, 14000, 17800};
+        double average = Arrays.stream(arr3).sum() / arr3.length;
+        System.out.printf("Средняя сумма трат за месяц составила %s рублей\n", average);
 
         // task 4
-        for (int i = 0; i < arr1.length; i++) {
-            if (arr1[i] % 2 != 0) arr1[i]++;
-            System.out.printf("%s ", arr1[i]);
+        char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        for (int i = 0; i < reverseFullName.length / 2; i++) {
+            char temp = reverseFullName[i];
+            reverseFullName[i] = reverseFullName[reverseFullName.length - i - 1];
+            reverseFullName[reverseFullName.length - i - 1] = temp;
+        }
+        for (char c: reverseFullName) {
+            System.out.print(c);
         }
     }
 }
