@@ -10,10 +10,10 @@ class Author {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
     public String getSurname() {
-        return surname;
+        return this.surname;
     }
 }
 
@@ -29,13 +29,13 @@ class Book {
     }
 
     public String getTitle() {
-        return title;
+        return this.title;
     }
     public Author getAuthor() {
-        return author;
+        return this.author;
     }
     public int getReleaseYear() {
-        return releaseYear;
+        return this.releaseYear;
     }
 
     public void setReleaseYear(int releaseYear) {
