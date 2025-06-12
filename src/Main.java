@@ -1,55 +1,68 @@
 import java.time.LocalDate;
 
+class Author {
+    private String name;
+    private String surname;
+
+    Author(String name, String surname) {
+        this.name = name;
+        this.surname = surname;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+    public String getSurname() {
+        return this.surname;
+    }
+}
+
+class Book {
+    private String title;
+    private Author author;
+    private int releaseYear;
+
+    Book(String title, Author author, int releaseYear) {
+        this.title = title;
+        this.author = author;
+        this.releaseYear = releaseYear;
+    }
+
+    public String getTitle() {
+        return this.title;
+    }
+    public Author getAuthor() {
+        return this.author;
+    }
+    public int getReleaseYear() {
+        return this.releaseYear;
+    }
+
+    public void setReleaseYear(int releaseYear) {
+        if (releaseYear <= LocalDate.now().getYear() && releaseYear >= 0) {
+            this.releaseYear = releaseYear;
+        }
+    }
+}
+
 public class Main {
     public static void main(String[] args) {
-        // task 1
-        int currentYear = LocalDate.now().getYear();
-        isLeapYear(currentYear);
+        Author gosling = new Author("Райяан", "Гослинг");
+        Author noname = new Author("Ноунейм", "Какой-то");
 
-        // task 2
-        getInstallMessage(0, currentYear);
+        Book modernMasterpiece = new Book("Шедевр современности", gosling, 2025);
+        Book hackneyedClassic = new Book("Избитая классика", noname, 1978);
 
-        // task 3
-        getDeliveryMessage(95);
+        System.out.println(modernMasterpiece.getTitle());
+        System.out.println(hackneyedClassic.getTitle());
 
-    }
+        System.out.println(modernMasterpiece.getReleaseYear());
+        System.out.println(hackneyedClassic.getReleaseYear());
 
-    public static void isLeapYear(int year) {
-        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
-            System.out.println(year + " год является високосным");
-        }
-        else System.out.println(year + " год не является високосным");
-    }
+        System.out.println(modernMasterpiece.getAuthor().getSurname());
+        System.out.println(hackneyedClassic.getAuthor().getName());
 
-    public static void getInstallMessage(int clientOS, int clientDeviceYear) {
-        String outMessage = "Установите%s версию приложения для %s по ссылке\n";
-        if (clientOS == 0 && clientDeviceYear < 2015) {
-            System.out.printf(outMessage, " облегчённую", "iOS");
-        }
-        else if (clientOS == 0) {
-            System.out.printf(outMessage, "", "iOS");
-        }
-        else if (clientOS == 1 && clientDeviceYear < 2015) {
-            System.out.printf(outMessage, " облегчённую", "Android");
-        }
-        else if (clientOS == 1) {
-            System.out.printf(outMessage, "", "Android");
-        }
-    }
-
-    public static void getDeliveryMessage(int deliveryDistance) {
-        short days = 1;
-        if (deliveryDistance >= 0 && deliveryDistance < 20) {
-            System.out.println("Потребуется дней: " + days);
-        }
-        else if (deliveryDistance < 60) {
-            days += 1;
-            System.out.println("Потребуется дней: " + days);
-        }
-        else if (deliveryDistance < 100) {
-            days += 1;
-            System.out.println("Потребуется дней: " + days);
-        }
-        else System.out.println("Доставки нет");
+        hackneyedClassic.setReleaseYear(1964);
+        System.out.println(hackneyedClassic.getReleaseYear());
     }
 }
